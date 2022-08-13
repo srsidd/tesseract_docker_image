@@ -1,0 +1,57 @@
+repositories:
+  ros_industrial_cmake_boilerplate:
+    type: git
+    url: https://github.com/ros-industrial/ros_industrial_cmake_boilerplate.git
+    version: 0.2.15
+  tesseract:
+    type: git
+    url: https://github.com/tesseract-robotics/tesseract.git
+    version: 0.7.4
+  trajopt:
+    type: git
+    url: https://github.com/tesseract-robotics/trajopt.git
+    version: 0.2.0
+  tesseract_planning:
+    type: git
+    url: https://github.com/tesseract-robotics/tesseract_planning.git
+    version: 0.7.3
+  descartes_light:
+    type: git
+    url: https://github.com/swri-robotics/descartes_light.git
+    version: 0.3.0
+  opw_kinematics:
+    type: git
+    url: https://github.com/Jmeyer1292/opw_kinematics.git
+    version: 0.4.4
+  ifopt:
+    type: git
+    url: https://github.com/ethz-adrl/ifopt.git
+    version: 2.1.2
+  tesseract_ros2:
+    type: git
+    url: https://github.com/srsidd/tesseract_ros2.git
+    version: tesseract_rviz_v2
+  tesseract_ext:
+    type: git
+    url: https://github.com/srsidd/tesseract_ext.git
+    version: ros2-dev
+  plugin_loader:
+    type: git
+    url: https://github.com/marip8/plugin_loader.git
+    version: main
+  noether:
+    type: git
+    url: https://github.com/marip8/noether.git
+    version: devel
+  industrial_reconstruction:
+    type: git
+    url: https://github.com/ros-industrial/industrial_reconstruction.git
+    version: main
+  gl_depth_sim:
+    type: git
+    url: https://github.com/marrts/gl_depth_sim.git
+    version: ros2
+  control_msgs:
+    type: git
+    url: https://github.com/ros-controls/control_msgs.git
+    version: galactic-devel
