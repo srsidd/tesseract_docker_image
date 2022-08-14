@@ -34,9 +34,9 @@ RUN apt-get update \
     libbullet-dev \
     libbullet-extras-dev \
     libxmlrpcpp-dev && \
-    rosdep init && rosdep update && apt-get update && \
     apt-get clean && \
-    && rm -rf /var/lib/apt/lists/*
+    rosdep init && rosdep update && \
+    apt-get update && rm -rf /var/lib/apt/lists/*
 
 # ENV PKG_CONFIG_PATH /opt/ros/$ROSDISTRO/lib/pkgconfig
 # ENV LD_LIBRARY_PATH /opt/ros/$ROSDISTRO/lib
