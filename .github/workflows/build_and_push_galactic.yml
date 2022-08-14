@@ -41,5 +41,6 @@ jobs:
           context: galactic
           push: true
           # tags: srsidd/tesseract:galactic
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          # tags: ${{ steps.meta.outputs.tags }}
+          tags: ghcr.io/${{ github.repository_owner }}/tesseract:galactic
+          # labels: ${{ steps.meta.outputs.labels }}
