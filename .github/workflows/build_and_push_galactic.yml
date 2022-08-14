@@ -34,4 +34,4 @@ jobs:
         with:
           context: galactic
           push: true
-          tags: tesseract:galactic
+          tags: srsidd/tesseract:galactic
