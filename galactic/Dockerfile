@@ -60,8 +60,9 @@ RUN vcs import < /tesseract_ws/dependencies.repos && \
     # Setup Argus dependencies
     cd .. && rosdep init && rosdep update && apt-get update && \
     rosdep install --from-paths src  --ignore-src -r -y && \
-    python3 -m pip install -U install open3d && \
-    . /opt/ros/$ROSDISTRO/setup.sh && cd .. && \
+    python3 -m pip install -U install open3d
+
+RUN . /opt/ros/$ROSDISTRO/setup.sh && cd .. && \
     colcon build --event-handlers terminal_title- console_cohesion+ --symlink-install && \
     rm -rf build log src
 
