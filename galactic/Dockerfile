@@ -34,8 +34,8 @@ RUN apt-get update \
     libbullet-dev \
     libbullet-extras-dev \
     libxmlrpcpp-dev && \
-    apt-get clean \
-    && apt-get clean \
+    rosdep init && rosdep update && apt-get update && \
+    apt-get clean && \
     && rm -rf /var/lib/apt/lists/*
 
 # ENV PKG_CONFIG_PATH /opt/ros/$ROSDISTRO/lib/pkgconfig
@@ -58,7 +58,7 @@ COPY dependencies.repos /tesseract_ws/
 # Setup Tesseract dependencies
 RUN vcs import < /tesseract_ws/dependencies.repos && \
     # Setup Argus dependencies
-    cd .. && rosdep init && rosdep update && apt-get update && \
+    cd .. && \
     rosdep install --from-paths src  --ignore-src -r -y && \
     python3 -m pip install -U install open3d
 
