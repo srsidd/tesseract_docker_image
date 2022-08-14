@@ -13,8 +13,7 @@ jobs:
     name: build-and-push-galactic
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2
 
       # - name: Login to Github Packages
@@ -28,7 +27,8 @@ jobs:
       # This is not required but recommended using it to be able to build multi-platform images, export cache, etc.
       # - name: Set up Docker Buildx
       #   uses: docker/setup-buildx-action@v2
-
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
