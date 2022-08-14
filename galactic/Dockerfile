@@ -62,8 +62,7 @@ RUN vcs import < /tesseract_ws/dependencies.repos && \
     rosdep install --from-paths src  --ignore-src -r -y \
     --skip-keys "catkin tesseract_plugins rviz" && \
     python3 -m pip install -U install open3d && . /opt/ros/$ROSDISTRO/setup.sh && \
-    colcon build && \
-    # colcon build --event-handlers terminal_title- console_cohesion+ --symlink-install && \
+    colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --event-handlers terminal_title- console_cohesion+ && \
     rm -rf build log src
 
 ADD entrypoint.sh /entrypoint.sh
