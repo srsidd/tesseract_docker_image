@@ -59,7 +59,8 @@ COPY dependencies.repos /tesseract_ws/
 RUN vcs import < /tesseract_ws/dependencies.repos && \
     # Setup Argus dependencies
     cd .. && \
-    rosdep install --from-paths src  --ignore-src -r -y && \
+    rosdep install --from-paths src  --ignore-src -r -y \
+    --skip-keys "catkin tesseract_plugins rviz" && \
     python3 -m pip install -U install open3d
 
 RUN . /opt/ros/$ROSDISTRO/setup.sh && cd .. && \
