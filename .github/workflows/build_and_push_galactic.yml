@@ -23,6 +23,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: my-docker-hub-namespace/my-docker-hub-repository
+
       # create and boot a builder using by default the docker-container builder driver.
       # This is not required but recommended using it to be able to build multi-platform images, export cache, etc.
       # - name: Set up Docker Buildx
@@ -34,4 +40,6 @@ jobs:
         with:
           context: galactic
           push: true
-          tags: srsidd/tesseract:galactic
+          # tags: srsidd/tesseract:galactic
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
