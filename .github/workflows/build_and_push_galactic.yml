@@ -13,6 +13,10 @@ jobs:
     name: build-and-push-galactic
     runs-on: ubuntu-latest
     steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+
       # - name: Login to Github Packages
       #   uses: docker/login-action@v2
       #   with:
