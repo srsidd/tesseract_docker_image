@@ -62,7 +62,7 @@ RUN vcs import < /tesseract_ws/dependencies.repos && \
     rosdep install --from-paths src  --ignore-src -r -y \
     --skip-keys "catkin tesseract_plugins rviz" && \
     python3 -m pip install -U install open3d && . /opt/ros/$ROSDISTRO/setup.sh && \
-    echo "\n\n\n\n About to build\n\n\n\n\n" && \
+    echo "\n\n\n\n About to build\n\n\n\n\n" && ls -lh && \
     colcon build && \
     # colcon build --event-handlers terminal_title- console_cohesion+ --symlink-install && \
     rm -rf build log src
