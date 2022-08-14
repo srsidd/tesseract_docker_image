@@ -33,3 +33,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: galactic
+          push: true
+          tags: tesseract:galactic
