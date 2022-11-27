@@ -55,3 +55,7 @@ repositories:
     type: git
     url: https://github.com/ros-controls/control_msgs.git
     version: galactic-devel
+  cartesian_trajectory_msgs:
+    type: git
+    url: https://github.com/marrts/cartesian_trajectory_msgs.git
+    version: ros2
