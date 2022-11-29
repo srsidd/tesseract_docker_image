@@ -65,5 +65,5 @@ repositories:
     version: main
   rviz_polygon_selection_tool:
     type: git
-    url: https://github.com/marip8/rviz_polygon_selection_tool.git
+    url: https://github.com/srsidd/rviz_polygon_selection_tool.git
     version: main
