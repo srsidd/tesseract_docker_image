@@ -63,7 +63,3 @@ repositories:
     type: git
     url: https://github.com/srsidd/rviz_polygon_selection_tool.git
     version: main
-  plugin_loader:
-    type: git
-    url: https://github.com/marip8/plugin_loader.git
-    version: main
