@@ -9,7 +9,7 @@ ARG ROSDISTRO=galactic
 ARG ROS_BASE_TAG=galactic
 
 FROM ros:$ROS_BASE_TAG-ros-core
-MAINTAINER Siddharth Srivatsa
+LABEL maintainer="Siddharth Srivatsa srivaatsasiddharth@gmail.com"
 
 ARG ROSDISTRO
 ARG DEBIAN_FRONTEND=noninteractive
@@ -23,13 +23,8 @@ RUN apt-get update \
     python3-rosdep \
     python3-colcon-common-extensions \
     libassimp-dev \
-    # libomp-dev \
-    # libtinyxml-dev \
-    # libtinyxml2-dev \
-    # liboctomap-dev \
     libompl-dev \
     git \
-    # git-all \
     wget \
     libbullet-dev \
     libbullet-extras-dev \
@@ -38,8 +33,6 @@ RUN apt-get update \
     rosdep init && rosdep update && \
     apt-get update && rm -rf /var/lib/apt/lists/*
 
-# ENV PKG_CONFIG_PATH /opt/ros/$ROSDISTRO/lib/pkgconfig
-# ENV LD_LIBRARY_PATH /opt/ros/$ROSDISTRO/lib
 
 # Add ssh credentials to the build
 ARG SSH_PRIVATE_KEY
