@@ -29,10 +29,11 @@ RUN apt-get update \
     libbullet-dev \
     libbullet-extras-dev \
     libxmlrpcpp-dev && \
+    taskflow && \
+    coinor-libipopt-dev && \
     apt-get clean && \
     rosdep init && rosdep update && \
     apt-get update && rm -rf /var/lib/apt/lists/*
-
 
 # Add ssh credentials to the build
 ARG SSH_PRIVATE_KEY
