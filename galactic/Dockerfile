@@ -29,7 +29,6 @@ RUN apt-get update \
     libbullet-dev \
     libbullet-extras-dev \
     libxmlrpcpp-dev && \
-    taskflow && \
     coinor-libipopt-dev && \
     apt-get clean && \
     rosdep init && rosdep update && \
