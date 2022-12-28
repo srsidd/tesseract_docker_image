@@ -29,6 +29,7 @@ RUN apt-get update \
     libbullet-dev \
     libbullet-extras-dev \
     libxmlrpcpp-dev && \
+    ros-galactic-octomap && \
     apt-get clean && \
     rosdep init && rosdep update && \
     apt-get update && rm -rf /var/lib/apt/lists/*
@@ -53,7 +54,7 @@ RUN vcs import < /tesseract_ws/dependencies.repos && \
     # Setup Argus dependencies
     cd .. && apt-get update &&\
     rosdep install --from-paths src  --ignore-src -r -y \
-    --skip-keys "catkin tesseract_plugins rviz" && \
+    --skip-keys "catkin tesseract_plugins rviz plugin_loader rosidl_default_generators ament_cmake ament_lint_common pluginlib octomap ament_cmake_gtest ament_lint_common ros_testing tf2_eigen" && \
     python3 -m pip install -U install open3d && . /opt/ros/$ROSDISTRO/setup.sh && \
     colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --event-handlers terminal_title- console_cohesion+ && \
     rm -rf build log src
