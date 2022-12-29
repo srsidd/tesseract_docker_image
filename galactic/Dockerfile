@@ -51,7 +51,7 @@ COPY dependencies.repos /tesseract_ws/
 RUN vcs import < /tesseract_ws/dependencies.repos && \
     # Setup Argus dependencies
     cd .. && apt-get update && \
-    apt-get install -y --no-install-recommends ros-galactic-octomap && \
+    apt-get install -y --no-install-recommends ros-galactic-octomap ros-galactic-octomap-msgs && \
     rosdep install --from-paths src  --ignore-src -r -y \
     --skip-keys "catkin tesseract_plugins rviz plugin_loader rosidl_default_generators ament_cmake ament_lint_common pluginlib octomap ament_cmake_gtest ament_lint_common ros_testing tf2_eigen" && \
     python3 -m pip install -U install open3d && . /opt/ros/$ROSDISTRO/setup.sh && \
