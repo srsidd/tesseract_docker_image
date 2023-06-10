@@ -29,8 +29,6 @@ RUN apt-get update \
     libbullet-dev \
     libbullet-extras-dev \
     libxmlrpcpp-dev && \
-    software-properties-common && \
-    add-apt-repository ppa:ros-industrial/ppa -y && \
     apt-get clean && \
     rosdep init && rosdep update && \
     apt-get update && rm -rf /var/lib/apt/lists/*
@@ -54,6 +52,8 @@ COPY dependencies.repos /tesseract_ws/
 RUN vcs import < /tesseract_ws/dependencies.repos && \
     # Setup Argus dependencies
     cd .. && apt-get update && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:ros-industrial/ppa -y && \
     apt-get install -y --no-install-recommends taskflow ros-galactic-octomap ros-galactic-octomap-msgs ros-galactic-pcl-conversions liborocos-kdl-dev ros-galactic-tf2 ros-galactic-tf2-ros ros-galactic-tf2-eigen ros-galactic-urdf ros-galactic-cv-bridge ros-galactic-rviz-common && \
     rosdep install --from-paths src  --ignore-src -r -y \
     --skip-keys "catkin tesseract_plugins rviz plugin_loader rosidl_default_generators ament_cmake ament_lint_common pluginlib octomap ament_cmake_gtest ament_lint_common ros_testing tf2_eigen" && \
