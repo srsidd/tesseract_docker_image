@@ -29,6 +29,8 @@ RUN apt-get update \
     libbullet-dev \
     libbullet-extras-dev \
     libxmlrpcpp-dev && \
+    software-properties-common && \
+    add-apt-repository ppa:ros-industrial/ppa -y && \
     apt-get clean && \
     rosdep init && rosdep update && \
     apt-get update && rm -rf /var/lib/apt/lists/*
@@ -45,7 +47,6 @@ RUN mkdir ~/.ssh/ && \
     touch ~/.ssh/known_hosts && \
     eval $(ssh-agent) && \
     ssh-keyscan github.com >> ~/.ssh/known_hosts
-
 
 WORKDIR /tesseract_ws/src
 COPY dependencies.repos /tesseract_ws/
