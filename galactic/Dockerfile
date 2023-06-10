@@ -3,7 +3,7 @@
 # Author: Siddharth Srivatsa <srivaatsasiddharth@gmail.com>
 
 # Build command
-# docker build --build-arg ROSDISTRO=galactic --build-arg ROS_BASE_TAG=galactic  -t tesseract:galactic .
+# docker build --build-arg ROSDISTRO=galactic --build-arg ROS_BASE_TAG=galactic -t tesseract:galactic .
 
 ARG ROSDISTRO=galactic
 ARG ROS_BASE_TAG=galactic
@@ -37,8 +37,9 @@ RUN apt-get update \
 ARG SSH_PRIVATE_KEY
 # TODO: Pass private key from a github secret
 RUN mkdir /root/.ssh/ && \
-    echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_rsa && \
-    chmod 400 ~/.ssh/id_rsa && \
+    echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_ed25519 && \
+    chmod 400 /root/.ssh/id_ed25519 && \
+    cat /root/.ssh/id_ed25519 && \
     # Ensure your domain is accepted
     touch /root/.ssh/known_hosts && \
     eval $(ssh-agent) && \
