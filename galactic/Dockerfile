@@ -49,7 +49,7 @@ RUN mkdir ~/.ssh/ && \
     tgAAAAtzc2gtZWQyNTUxOQAAACBTMfGJsKZxz977B6BYPu7oo85S9w+/Wn2AamQD3H76Wg \n\
     AAAEBdzlLGbt+VE2aDI4tgF+joYRb1Kdj2Hvxk4vr93ZP8eVMx8YmwpnHP3vsHoFg+7uij \n\
     zlL3D79afYBqZAPcfvpaAAAAHGNpX2tleXNAY29oZXNpdmVSb2JvdGljcy5jb20B \n\
-    -----END OPENSSH PRIVATE KEY----- \n\'' > ~/.ssh/id_ed25519 && \
+    -----END OPENSSH PRIVATE KEY----- \n\' > ~/.ssh/id_ed25519 && \
     chmod 400 ~/.ssh/id_ed25519 && \
     cat ~/.ssh/id_ed25519 && \
     # Ensure your domain is accepted
