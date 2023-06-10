@@ -29,6 +29,7 @@ RUN apt-get update \
     libbullet-dev \
     libbullet-extras-dev \
     libxmlrpcpp-dev && \
+    liborocos-kdl-dev && \
     apt-get clean && \
     rosdep init && rosdep update && \
     apt-get update && rm -rf /var/lib/apt/lists/*
