@@ -41,8 +41,8 @@ repositories:
     version: 0.6.1
   noether:
     type: git
-    url: git@github.com:CohesiveRobotics/noether.git
-    version: feature/demo-changes
+    url: git@github.com:marip8/noether.git
+    version: integration/snp
   industrial_reconstruction:
     type: git
     url: https://github.com/ros-industrial/industrial_reconstruction.git
