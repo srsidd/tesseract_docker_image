@@ -34,13 +34,14 @@ RUN apt-get update \
     apt-get update && rm -rf /var/lib/apt/lists/*
 
 # Add ssh credentials to the build
-ARG SSH_PRIVATE_KEY="b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-QyNTUxOQAAACBTMfGJsKZxz977B6BYPu7oo85S9w+/Wn2AamQD3H76WgAAAKBvmnS2b5p0
-tgAAAAtzc2gtZWQyNTUxOQAAACBTMfGJsKZxz977B6BYPu7oo85S9w+/Wn2AamQD3H76Wg
-AAAEBdzlLGbt+VE2aDI4tgF+joYRb1Kdj2Hvxk4vr93ZP8eVMx8YmwpnHP3vsHoFg+7uij
-zlL3D79afYBqZAPcfvpaAAAAHGNpX2tleXNAY29oZXNpdmVSb2JvdGljcy5jb20B
------END OPENSSH PRIVATE KEY-----
-"
+ARG SSH_PRIVATE_KEY='b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW \n\
+QyNTUxOQAAACBTMfGJsKZxz977B6BYPu7oo85S9w+/Wn2AamQD3H76WgAAAKBvmnS2b5p0 \n\
+tgAAAAtzc2gtZWQyNTUxOQAAACBTMfGJsKZxz977B6BYPu7oo85S9w+/Wn2AamQD3H76Wg \n\
+AAAEBdzlLGbt+VE2aDI4tgF+joYRb1Kdj2Hvxk4vr93ZP8eVMx8YmwpnHP3vsHoFg+7uij \n\
+zlL3D79afYBqZAPcfvpaAAAAHGNpX2tleXNAY29oZXNpdmVSb2JvdGljcy5jb20B \n\
+-----END OPENSSH PRIVATE KEY----- \n\
+'
+
 # TODO: Pass private key from a github secret
 RUN mkdir /root/.ssh/ && \
     echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_ed25519 && \
