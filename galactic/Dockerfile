@@ -43,14 +43,19 @@ zlL3D79afYBqZAPcfvpaAAAAHGNpX2tleXNAY29oZXNpdmVSb2JvdGljcy5jb20B \n\
 '
 
 # TODO: Pass private key from a github secret
-RUN mkdir /root/.ssh/ && \
-    echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_ed25519 && \
-    chmod 400 /root/.ssh/id_ed25519 && \
-    cat /root/.ssh/id_ed25519 && \
+RUN mkdir ~/.ssh/ && \
+    echo 'b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW \n\
+    QyNTUxOQAAACBTMfGJsKZxz977B6BYPu7oo85S9w+/Wn2AamQD3H76WgAAAKBvmnS2b5p0 \n\
+    tgAAAAtzc2gtZWQyNTUxOQAAACBTMfGJsKZxz977B6BYPu7oo85S9w+/Wn2AamQD3H76Wg \n\
+    AAAEBdzlLGbt+VE2aDI4tgF+joYRb1Kdj2Hvxk4vr93ZP8eVMx8YmwpnHP3vsHoFg+7uij \n\
+    zlL3D79afYBqZAPcfvpaAAAAHGNpX2tleXNAY29oZXNpdmVSb2JvdGljcy5jb20B \n\
+    -----END OPENSSH PRIVATE KEY----- \n\'' > ~/.ssh/id_ed25519 && \
+    chmod 400 ~/.ssh/id_ed25519 && \
+    cat ~/.ssh/id_ed25519 && \
     # Ensure your domain is accepted
-    touch /root/.ssh/known_hosts && \
+    touch ~/.ssh/known_hosts && \
     eval $(ssh-agent) && \
-    ssh-keyscan github.com >> /root/.ssh/known_hosts
+    ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 
 WORKDIR /tesseract_ws/src
