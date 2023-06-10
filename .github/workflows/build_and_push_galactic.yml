@@ -36,5 +36,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: galactic
+          build-args: |
+            ROSDISTRO=galactic
+            SSH_PRIVATE_KEY=${{ secrets.COHESIVE_SSH_KEY }}
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/tesseract:galactic
