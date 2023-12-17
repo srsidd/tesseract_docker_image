@@ -57,7 +57,7 @@ RUN vcs import < /tesseract_ws/dependencies.repos && \
     add-apt-repository ppa:ros-industrial/ppa -y && \
     python3 -m pip install -U install open3d transforms3d && \
     rosdep install --from-paths src  --ignore-src -r -y \
-    --skip-keys "catkin tesseract_plugins rviz plugin_loader rosidl_default_generators ament_cmake ament_lint_common pluginlib octomap ament_cmake_gtest ament_lint_common ros_testing tf2_eigen" && \
+    --skip-keys "catkin tesseract_plugins libvtk rviz plugin_loader rosidl_default_generators ament_cmake ament_lint_common pluginlib octomap ament_cmake_gtest ament_lint_common ros_testing tf2_eigen" && \
     . /opt/ros/$ROSDISTRO/setup.sh && \
     colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release -DTESSERACT_BUILD_FCL=OFF -DBUILD_RENDERING=OFF -DBUILD_STUDIO=OFF  --event-handlers terminal_title- console_cohesion+ && \
     rm -rf build log src
