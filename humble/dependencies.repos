@@ -68,5 +68,5 @@
     version: ros2
 - git:
     local-name: cartesian_controllers
-    url: git@github.com:srsidd/cartesian_controllers.git
+    uri: git@github.com:srsidd/cartesian_controllers.git
     version: ros2
